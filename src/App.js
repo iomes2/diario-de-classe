@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './components/Login/Login';
+import RecuperacaoSenha from './components/Login/RecuperacaoSenha';
+import Header from './components/Header/Header';
+import Cadastro from './components/Cadastro/Cadastro';
+import { AuthProvider } from './context/AuthContext'; // Importando o AuthProvider
+import Home from './components/Home/Home';
+import PrivateRoute from './components/PrivateRoute'; // Importando o PrivateRoute
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/rec" element={<RecuperacaoSenha />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/home" element={
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            } 
+          />
+          {/* Adicione outras rotas aqui */}
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
-}
+};
 
 export default App;
