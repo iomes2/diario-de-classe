@@ -73,7 +73,7 @@ const Login = () => {
         <img
           src="/logo.jpg"
           alt="logo"
-          style={{ width: "300px", marginRight: "8px" }}
+          style={{ width: "300px", marginRight: "9px" }}
         />
       </Container2>
     </Container>
