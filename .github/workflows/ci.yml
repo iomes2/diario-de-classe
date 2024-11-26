@@ -21,16 +21,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16' # Versão recomendada para Create React App
+          node-version: '16'
 
       # Passo 3: Instalar dependências
       - name: Install dependencies
         run: npm install
 
-      # Passo 4: Verificar lint (opcional)
+      # Passo 4: Verificar lint
       - name: Run ESLint
         run: |
-          npx eslint src/**/*.{js,jsx}
+          npx eslint src/**/*.js
 
       # Passo 5: Rodar testes
       - name: Run tests
@@ -38,11 +38,10 @@ jobs:
           CI: true
         run: npm test
 
-      # Passo 6: Rodar build de produção
+      # Passo 6: Build
       - name: Build the project
         run: npm run build
 
-      # Passo 7: Verificar tamanho do build (opcional)
+      # Passo 7: Analisar tamanho do build
       - name: Analyze build size
-        run: |
-          du -sh build
+        run: du -sh build
