@@ -23,7 +23,7 @@ const Home = () => {
         <MenuButton to="/gerar-relatorios-frequencias">Gerar Relatórios de Frequências</MenuButton>
         <MenuButton to="/gerar-relatorios-notas">Gerar Relatórios de Notas</MenuButton>
         <MenuButton to="/nova-turma">Nova Turma</MenuButton>
-        <MenuButton to="/gerar-relatorios-notas">Adicionar Aluno</MenuButton>
+        <MenuButton to="/novo-aluno">Adicionar Aluno</MenuButton>
       </Menu>
       </Container2>
 
