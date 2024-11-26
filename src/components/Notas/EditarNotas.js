@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebaseConfig';
-import { collection, query, where, getDocs, doc, updateDoc } from 'firebase/firestore';
+import { collection, query, where, getDocs, updateDoc } from 'firebase/firestore';
 import { Container, Title, FormGroup, Select, Table, TableRow, TableHeader, TableCell, Input, Button } from './style';
 
 const EditarNotas = () => {
